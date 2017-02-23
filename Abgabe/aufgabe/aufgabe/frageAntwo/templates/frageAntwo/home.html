@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <h3 class="panel-header">{{ frage.text}} </h3>
+
+ 
+<div class="list-group" >
+    {% for antwort in antworten %}
+        <a class="list-group-item" href="#">
+            {{ antwort }}  ---
+			{% if antwort.isAkzeptiert == True %}
+                <font color="green">Diese Antwort ist akzeptiert!</font>
+			{% elif antwort.isAkzeptiert  == False %}
+			    <font color="red">Antwort nicht akzeptiert !</font>
+            {% else %}
+                <font color="red">Antwort nicht akzeptiert !</font>
+            {% endif %}
+			
+            <span class="badge"></span></a>
+    {% empty %}
+        <span class="list-group-item">No Answers available.</span>
+    {% endfor %}
+</div>
+
+{% endblock content %}
+
+
+
+

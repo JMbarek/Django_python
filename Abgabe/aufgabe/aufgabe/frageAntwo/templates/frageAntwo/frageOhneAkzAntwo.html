@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <h3 class="panel-header">Die ohne akzeptierte Antworten Fragen  </h3>
+
+<div class="list-group" >
+    {% for frage in fragen %}
+        <a class="list-group-item" href="#">
+            {{ frage }} 
+			
+            <span class="badge"></span></a>
+    {% empty %}
+        <span class="list-group-item">No questions available.</span>
+    {% endfor %}
+</div>
+
+{% endblock content %}
+
+
+
+
